@@ -2357,24 +2357,24 @@ ReplayUpdateFrame:SetScript("OnUpdate", function(self, elapsed)
 					replayTexture[i]:SetPoint("TOPLEFT", select(4, replayTexture[i]:GetPoint()) + movSpeed * elapsed, 0)
 				elseif replaySavedSettings[15] == 1 and select(4, replayTexture[i]:GetPoint()) < endPos or replaySavedSettings[15] == 2 and select(4, replayTexture[i]:GetPoint()) > endPos then
 					replayTexture[i]:SetPoint("TOPLEFT", select(4, replayTexture[i]:GetPoint()) + movSpeed * elapsed, 0)
-					replayTexture[i]:SetAlpha(abs(endPos - select(4, replayTexture[i]:GetPoint())) / 20)
+					replayTexture[i]:SetAlpha(math.max(0, abs(endPos - select(4, replayTexture[i]:GetPoint())) / 20))
 					if replayRank[i] ~= nil then
-						replayRank[i]:SetAlpha(abs(endPos - select(4, replayTexture[i]:GetPoint())) / 20)
+						replayRank[i]:SetAlpha(math.max(0, abs(endPos - select(4, replayTexture[i]:GetPoint())) / 20))
 					end
 					if replayDamage[i] ~= nil then
-						replayDamage[i]:SetAlpha(abs(endPos - select(4, replayTexture[i]:GetPoint())) / 20)
+						replayDamage[i]:SetAlpha(math.max(0, abs(endPos - select(4, replayTexture[i]:GetPoint())) / 20))
 					end
 					if replayFont[i] ~= nil then
-						replayFont[i]:SetAlpha(abs(endPos - select(4, replayTexture[i]:GetPoint())) / 20)
+						replayFont[i]:SetAlpha(math.max(0, abs(endPos - select(4, replayTexture[i]:GetPoint())) / 20))
 					end
 					if replayFailTexture[i] ~= nil then
-						replayFailTexture[i]:SetAlpha(abs(endPos - select(4, replayTexture[i]:GetPoint())) / 20)
+						replayFailTexture[i]:SetAlpha(math.max(0, abs(endPos - select(4, replayTexture[i]:GetPoint())) / 20))
 					end
 					if replayUpperTexture[i] ~= nil then
-						replayUpperTexture[i]:SetAlpha(abs(endPos - select(4, replayTexture[i]:GetPoint())) / 20)
+						replayUpperTexture[i]:SetAlpha(math.max(0, abs(endPos - select(4, replayTexture[i]:GetPoint())) / 20))
 					end
 					if replayUpperFailTexture[i] ~= nil then
-						replayUpperFailTexture[i]:SetAlpha(abs(endPos - select(4, replayTexture[i]:GetPoint())) / 20)
+						replayUpperFailTexture[i]:SetAlpha(math.max(0, abs(endPos - select(4, replayTexture[i]:GetPoint())) / 20))
 					end
 				elseif replayTexture[i] ~= nil then
 					replayTexture[i]:Hide()
