@@ -30,9 +30,3 @@ It has been built from scratch to also include and display:
 
 The additions mentioned above are adjustable. You can also rescale the frame, change its scrolling direction, speed (ie. slower scrolling while casting) and modify the number of spells to display.  
 Settings are accessible from Interface > AddOns > SpellReplay or by simply right-clicking on the background square.
-
-## How to install
-- Click on the green button "Clone or download"
-- Select Download ZIP
-- Extract this .zip file under 'Your_WoW_Directory\Interface\AddOns\\'
-- Remove the "-master" from the folder name
