@@ -23,6 +23,6 @@ jobs:
         uses: QartemisT/packager@master
         if: ${{ github.event_name != 'pull_request' }}
         with:
-          args: -g classic -n "SpellReplay-{project-version}{classic}"
+          args: -g wrath -n "SpellReplay-{project-version}{classic}"
         env:
           GITHUB_OAUTH: ${{ secrets.GITHUB_TOKEN }}
