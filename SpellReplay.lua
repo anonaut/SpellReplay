@@ -1,4 +1,4 @@
--- SpellReplay (TBC Classic)
+-- SpellReplay (Wrath Classic)
 local LibSharedMedia = LibStub("LibSharedMedia-3.0")
 local ReplayFrame = CreateFrame("Frame", "ReplayFrame", UIParent)
 ReplayFrame:SetPoint("CENTER")
