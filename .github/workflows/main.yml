@@ -1,22 +1,33 @@
-name: Package and release
+name: CI
 
 on:
   push:
+    branches:
+      - master
     tags:
-      - '**'
+      - "*"
+  pull_request:
+    branches:
+      - master
 
 jobs:
-
-  release:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Clone project
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v1
         with:
-          fetch-depth: 0  # gets entire git history, needed for automatic changelogs
+          fetch-depth: 100
 
-      - name: Package and release for Wrath of the Lich King Classic
-        uses: BigWigsMods/packager@v2
+      - name: Install and run Luacheck
+        uses: nebularg/actions-luacheck@v1
         with:
-          args: -g wrath -w 0
+          args: "--no-color -q"
+
+      - name: Create Package
+        uses: QartemisT/packager@master
+        if: ${{ github.event_name != 'pull_request' }}
+        with:
+          args: -g classic -n "SpellReplay-{project-version}{classic}"
+        env:
+          GITHUB_OAUTH: ${{ secrets.GITHUB_TOKEN }}
