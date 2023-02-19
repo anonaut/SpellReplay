@@ -1,6 +1,6 @@
-## Interface: 20501
+## Interface: 30401
 ## Title: SpellReplay
-## Author: Mako (Venoxis) - Original: Oldsalt (Smolderforge)
+## Author: Pytte, Mako (Venoxis) - Original: Oldsalt (Smolderforge)
 ## Notes: Displays the spells you just casted and much more
 ## DefaultState: enabled
 ## SavedVariables: replaySavedSettings, displayToPartyTable
