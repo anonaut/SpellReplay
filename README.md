@@ -5,6 +5,7 @@
 </p>
 
 This is a fork of SpellReplay with fixes to work for Burning Crusade Classic. Big thanks to Oldsalt0 for the original work.
+-- This is another fork of anounaut as he seems to be afk as well, to fix latest Wrath bugs.
 
 Current Status: Testing (all features should work, please report any bugs you encounter)
 
