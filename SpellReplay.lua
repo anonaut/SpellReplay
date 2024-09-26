@@ -1,4 +1,4 @@
--- SpellReplay (TBC Classic)
+-- SpellReplay (Wrath Classic)
 local LibSharedMedia = LibStub("LibSharedMedia-3.0")
 local ReplayFrame = CreateFrame("Frame", "ReplayFrame", UIParent)
 ReplayFrame:SetPoint("CENTER")
@@ -260,7 +260,7 @@ local function createDropdown(opts)
     local change_func = opts['changeFunc'] or function (dropdown_val) end
 
     local dropdown = CreateFrame("Frame", dropdown_name, opts['parent'], 'UIDropDownMenuTemplate')
-    local dd_title = dropdown:CreateFontString(dropdown, 'OVERLAY', 'GameFontNormal')
+    local dd_title = dropdown:CreateFontString(nil, 'OVERLAY', 'GameFontNormal')
     dd_title:SetPoint("TOPLEFT", 20, 10)
 
     for _, item in pairs(menu_items) do -- Sets the dropdown width to the largest item string width.
@@ -2357,24 +2357,24 @@ ReplayUpdateFrame:SetScript("OnUpdate", function(self, elapsed)
 					replayTexture[i]:SetPoint("TOPLEFT", select(4, replayTexture[i]:GetPoint()) + movSpeed * elapsed, 0)
 				elseif replaySavedSettings[15] == 1 and select(4, replayTexture[i]:GetPoint()) < endPos or replaySavedSettings[15] == 2 and select(4, replayTexture[i]:GetPoint()) > endPos then
 					replayTexture[i]:SetPoint("TOPLEFT", select(4, replayTexture[i]:GetPoint()) + movSpeed * elapsed, 0)
-					replayTexture[i]:SetAlpha(abs(endPos - select(4, replayTexture[i]:GetPoint())) / 20)
+					replayTexture[i]:SetAlpha(math.max(0, abs(endPos - select(4, replayTexture[i]:GetPoint())) / 20))
 					if replayRank[i] ~= nil then
-						replayRank[i]:SetAlpha(abs(endPos - select(4, replayTexture[i]:GetPoint())) / 20)
+						replayRank[i]:SetAlpha(math.max(0, abs(endPos - select(4, replayTexture[i]:GetPoint())) / 20))
 					end
 					if replayDamage[i] ~= nil then
-						replayDamage[i]:SetAlpha(abs(endPos - select(4, replayTexture[i]:GetPoint())) / 20)
+						replayDamage[i]:SetAlpha(math.max(0, abs(endPos - select(4, replayTexture[i]:GetPoint())) / 20))
 					end
 					if replayFont[i] ~= nil then
-						replayFont[i]:SetAlpha(abs(endPos - select(4, replayTexture[i]:GetPoint())) / 20)
+						replayFont[i]:SetAlpha(math.max(0, abs(endPos - select(4, replayTexture[i]:GetPoint())) / 20))
 					end
 					if replayFailTexture[i] ~= nil then
-						replayFailTexture[i]:SetAlpha(abs(endPos - select(4, replayTexture[i]:GetPoint())) / 20)
+						replayFailTexture[i]:SetAlpha(math.max(0, abs(endPos - select(4, replayTexture[i]:GetPoint())) / 20))
 					end
 					if replayUpperTexture[i] ~= nil then
-						replayUpperTexture[i]:SetAlpha(abs(endPos - select(4, replayTexture[i]:GetPoint())) / 20)
+						replayUpperTexture[i]:SetAlpha(math.max(0, abs(endPos - select(4, replayTexture[i]:GetPoint())) / 20))
 					end
 					if replayUpperFailTexture[i] ~= nil then
-						replayUpperFailTexture[i]:SetAlpha(abs(endPos - select(4, replayTexture[i]:GetPoint())) / 20)
+						replayUpperFailTexture[i]:SetAlpha(math.max(0, abs(endPos - select(4, replayTexture[i]:GetPoint())) / 20))
 					end
 				elseif replayTexture[i] ~= nil then
 					replayTexture[i]:Hide()

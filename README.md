@@ -6,6 +6,8 @@
 
 This is a fork of SpellReplay with fixes to work for Burning Crusade Classic. Big thanks to Oldsalt0 for the original work.
 
+-- This is another fork of anounaut as he seems to be afk as well, to fix latest Wrath bugs.
+
 Current Status: Testing (all features should work, please report any bugs you encounter)
 
 Added Features:
@@ -28,9 +30,3 @@ It has been built from scratch to also include and display:
 
 The additions mentioned above are adjustable. You can also rescale the frame, change its scrolling direction, speed (ie. slower scrolling while casting) and modify the number of spells to display.  
 Settings are accessible from Interface > AddOns > SpellReplay or by simply right-clicking on the background square.
-
-## How to install
-- Click on the green button "Clone or download"
-- Select Download ZIP
-- Extract this .zip file under 'Your_WoW_Directory\Interface\AddOns\\'
-- Remove the "-master" from the folder name
